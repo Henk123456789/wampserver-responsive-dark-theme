@@ -1,4 +1,4 @@
-# WampServer Responsive Dark Theme
+## WampServer Responsive Dark Theme
 A responsive dark CSS theme for the WampServer index page.<br><br>
 <img src="./readme_assets/wamp_responsive_dark.jpg" alt="drawing" width="750"/>
 
