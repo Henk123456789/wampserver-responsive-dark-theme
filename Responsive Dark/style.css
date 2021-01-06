@@ -138,6 +138,35 @@ input, select {
     width: 110px;
 }
 
+.config .innerconfig .content dd a.popup {
+    position: relative;
+    cursor: help;
+}
+
+.config .innerconfig .content dd a.popup span {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 999;
+    background: #2d333e;
+    border: solid #aeb6c5 1px;
+    padding: 15px;
+    width: 305px;
+    display: none;
+    font-size: 12px;
+}
+
+.config .innerconfig .content dd a.popup:hover span {
+    color: #aeb6c5;
+    display: block;
+}
+
+.config .innerconfig .content dd a.popup span br:last-child {
+    content: "asd";
+    display: block;
+    height: 10px;
+}
+
 .alltools {
     padding: 25px;
 }
@@ -180,7 +209,6 @@ input, select {
     display: inline-flex;
     margin-right: 6px;
     width: 17px;
-    content: "\01F4C2";
 }
 
 .alltools .inneralltools .column ul li a:hover {
@@ -212,18 +240,23 @@ input, select {
     font-size: 13px;
 }
 
-.alltools .inneralltools .column:nth-child(3) ul li a:before {
-    content: "\00276F";
-    background: rgba(0, 0, 0, 0.2);
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: 100%;
-    width: 15px;
-    height: 15px;
-    font-size: 8px;
+.alltools .inneralltools .column:nth-child(2) ul li:before {
+    display: inline-flex;
+    margin-right: 6px;
+    width: 17px;
+    content: "\01F4C2";
 }
 
+.alltools .inneralltools .column:nth-child(2) ul li.projectsdir {
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.alltools .inneralltools .column:nth-child(2) ul li.projectsdir:before {
+    display: none;
+}
+
+.alltools .inneralltools .column:nth-child(3) ul li a:before,
 .alltools .inneralltools .column:nth-child(4) ul li a:before {
     content: "\00276F";
     background: rgba(0, 0, 0, 0.2);
@@ -261,9 +294,29 @@ input, select {
     }
 }
 
+@media screen and (max-width: 625px) {
+    .config .innerconfig .content dd {
+        position: relative;
+    }
+
+    .config .innerconfig .content dd a.popup {
+        position: unset;
+    }
+
+    .config .innerconfig .content dd a.popup span {
+        right: unset;
+        left: 0;
+        max-width: calc(100% - 30px);
+    }
+}
+
 @media screen and (max-width: 400px) {
     #head, .config, .alltools, #foot {
         padding: 20px;
+    }
+
+    #head .innerhead {
+        min-width: 100%;
     }
 
     #head .utility {
